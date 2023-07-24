@@ -1,0 +1,8 @@
+spring:
+  profiles: component-test
+  aws:
+    sqs:
+      input-queue: input-queue-test
+      output-queue: output-queue-test
+  schedulers:
+      sqs-poll-timeout: 50

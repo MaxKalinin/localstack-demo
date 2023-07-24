@@ -1,19 +1,30 @@
 plugins {
     id 'java'
+    id 'idea'
 }
-
-group = 'org.example'
-version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.7.11'
+    implementation 'org.projectlombok:lombok:1.18.24'
+    implementation 'software.amazon.awssdk:sqs:2.20.107'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testImplementation('org.junit.jupiter:junit-jupiter:5.6.2')
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.11'
+    testImplementation 'org.testcontainers:localstack:1.18.3'
+    testImplementation 'org.awaitility:awaitility:4.2.0'
+    testImplementation 'org.assertj:assertj-core:3.24.2'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
 test {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
