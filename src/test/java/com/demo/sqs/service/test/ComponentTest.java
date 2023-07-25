@@ -1,6 +1,6 @@
-package com.epam.demo.sqs.service.test;
+package com.demo.sqs.service.test;
 
-import com.epam.demo.sqs.service.test.aws.SqsManager;
+import com.demo.sqs.service.test.aws.SqsManager;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -46,8 +46,8 @@ class ComponentTest {
         );
 
         //check message was removed from input queue
-        assertThat(sqsManager.readSqsMessages(outputQueueName))
-                .as("")
+        assertThat(sqsManager.readSqsMessages(inputQueueName))
+                .as("Check message was removed from input queue")
                 .isEmpty();
     }
 }

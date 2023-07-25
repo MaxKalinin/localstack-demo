@@ -1,6 +1,6 @@
-package com.epam.demo.sqs.service.test.config;
+package com.demo.sqs.service.test.config;
 
-import com.epam.demo.sqs.service.test.aws.SqsManager;
+import com.demo.sqs.service.test.aws.SqsManager;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,4 +1,4 @@
-package com.epam.demo.sqs.service.service;
+package com.demo.sqs.service.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

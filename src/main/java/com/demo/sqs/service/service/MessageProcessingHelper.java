@@ -1,4 +1,4 @@
-package com.epam.demo.sqs.service.service;
+package com.demo.sqs.service.service;
 
 
 import org.springframework.stereotype.Component;

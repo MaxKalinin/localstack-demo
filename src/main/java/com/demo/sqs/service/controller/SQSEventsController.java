@@ -1,7 +1,7 @@
-package com.epam.demo.sqs.service.controller;
+package com.demo.sqs.service.controller;
 
-import com.epam.demo.sqs.service.service.MessageProcessingHelper;
-import com.epam.demo.sqs.service.service.SQSService;
+import com.demo.sqs.service.service.MessageProcessingHelper;
+import com.demo.sqs.service.service.SQSService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;

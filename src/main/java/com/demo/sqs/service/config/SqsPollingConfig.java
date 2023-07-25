@@ -1,4 +1,4 @@
-package com.epam.demo.sqs.service.config;
+package com.demo.sqs.service.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,9 +14,6 @@ public class SqsPollingConfig {
     @Bean
     public Executor taskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-//        executor.setCorePoolSize(2);
-//        executor.setMaxPoolSize(2);
-//        executor.setThreadNamePrefix("SqsEvents-");
         executor.initialize();
         return executor;
     }

@@ -1,4 +1,4 @@
-package com.epam.demo.sqs.service;
+package com.demo.sqs.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

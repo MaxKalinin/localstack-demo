@@ -1,4 +1,4 @@
-package com.epam.demo.sqs.service.test.aws;
+package com.demo.sqs.service.test.aws;
 
 import lombok.extern.slf4j.Slf4j;
 import software.amazon.awssdk.services.sqs.SqsClient;
@@ -24,6 +24,7 @@ public class SqsManager {
 
     public List<String> readSqsMessages(String queueName) {
         return sqsClient.receiveMessage(ReceiveMessageRequest.builder()
+                        .visibilityTimeout(1)
                         .maxNumberOfMessages(10)
                         .queueUrl(toQueueUrl(queueName))
                         .build()).messages().stream()
