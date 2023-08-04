@@ -17,7 +17,6 @@ public class SQSService {
     private final SqsClient sqsClient;
     private final String outputQueueUrl;
     private final String inputQueueUrl;
-    private final ReceiveMessageRequest receiveMessageRequest;
 
     public SQSService(SqsClient sqsClient,
                       @Value("${spring.aws.sqs.input-queue}") String inputQueueName,
@@ -25,11 +24,6 @@ public class SQSService {
         this.sqsClient = sqsClient;
         this.outputQueueUrl = toQueueUrl(outputQueueName);
         this.inputQueueUrl = toQueueUrl(inputQueueName);
-        this.receiveMessageRequest = ReceiveMessageRequest.builder()
-                .queueUrl(inputQueueUrl)
-                .maxNumberOfMessages(10)
-                .waitTimeSeconds(20)
-                .build();
     }
 
     public void deleteMessage(Message message) {
@@ -41,7 +35,12 @@ public class SQSService {
     }
 
     public List<Message> receiveMessage() {
-        return sqsClient.receiveMessage(receiveMessageRequest).messages();
+        return sqsClient.receiveMessage(ReceiveMessageRequest.builder()
+                        .queueUrl(inputQueueUrl)
+                        .maxNumberOfMessages(10)
+                        .waitTimeSeconds(20)
+                        .build())
+                .messages();
     }
 
     public void sendMessage(String message) {
