@@ -4,11 +4,11 @@ import com.demo.sqs.service.service.MessageProcessingHelper;
 import com.demo.sqs.service.service.SQSService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Controller;
 import software.amazon.awssdk.services.sqs.model.Message;
 
-@Service
 @Slf4j
+@Controller
 public class SQSEventsController {
     private final SQSService sqsService;
     private final MessageProcessingHelper processingHelper;

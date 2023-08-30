@@ -2,6 +2,7 @@ package com.demo.sqs.service.test;
 
 import com.demo.sqs.service.test.aws.SqsManager;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,7 @@ class ComponentTest {
     private static final int EXPECTED_MESSAGES_COUNT = 1;
 
     @Test
+    @DisplayName("Check service processes input message")
     void checkServiceProcessesInputMessage() {
 
         //send SQS message to the input queue

@@ -1,9 +1,9 @@
 spring:
   aws:
     region: us-east-1
-    profile: ${ENVIRONMENT:devqa}
+    profile: devqa
     sqs:
-      input-queue: ${INPUT_QUEUE:}
-      output-queue: ${OUTPUT_QUEUE:}
+      input-queue: input-queue-prod
+      output-queue: output-queue-prod
   schedulers:
     sqs-poll-timeout: 25000

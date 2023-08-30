@@ -2,7 +2,6 @@ package com.demo.sqs.service.test.config;
 
 import com.demo.sqs.service.test.aws.SqsManager;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -43,7 +42,7 @@ public class TestConfig {
 
     @Bean
     public SqsClient sqsClient(LocalStackContainer localStackContainer,
-                               @Autowired StaticCredentialsProvider credentialsProvider,
+                               StaticCredentialsProvider credentialsProvider,
                                @Value("${spring.aws.sqs.input-queue}") String inputQueueName,
                                @Value("${spring.aws.sqs.output-queue}") String outputQueueName) {
         SqsClient sqsClient = SqsClient.builder()
